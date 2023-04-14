@@ -11,7 +11,7 @@ function App() {
 		setEntry(event.target.value);
 	}
 
-	function handleFormSubmit(event) {
+	function handleTodoAdd(event) {
 		event.preventDefault();
 		// add the new entry
 		setTodos([...todos, entry]);
@@ -19,12 +19,17 @@ function App() {
 		setEntry('');
 	}
 
+	function clearTodos(){
+		setTodos([]);
+	}
+
 	return (
 		<main>
 			<Input
 				entry={entry}
 				onEntryChange={handleEntryChange}
-				onFormSubmit={handleFormSubmit}
+				onTodoAdd={handleTodoAdd}
+				onClickClear = {clearTodos}
 			/>
 			<List todos={todos} />
 		</main>

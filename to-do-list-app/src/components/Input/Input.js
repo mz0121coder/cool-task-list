@@ -3,11 +3,23 @@ import './Input.css';
 
 export default function Input( props ) {
 
+    // return(
+    //     <form onSubmit = {props.onFormSubmit}>
+    //         <label htmlFor = "todo">Enter to-do:</label>
+    //         <input type = "text" id = "todo" value = {props.entry} onChange = {props.onEntryChange}></input>
+    //         <input type = "submit" value = "Add Todo"></input>
+    //         <button onClick = {() => console.log("Clicking")}>placeholder text</button> 
+    //     </form>
+    //)
     return(
-        <form onSubmit = {props.onFormSubmit}>
+        <div>
             <label htmlFor = "todo">Enter to-do:</label>
             <input type = "text" id = "todo" value = {props.entry} onChange = {props.onEntryChange}></input>
-            <input type = "submit" value = "Add Todo"></input>
-        </form>
-    )
+            <button onClick = {props.onTodoAdd}> Add Todo</button>
+            <button onClick = {props.onClickClear}>Clear List</button> 
+        </div>
+    ) 
 }
+
+
+// add a button that clears the todo list
