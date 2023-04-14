@@ -4,10 +4,19 @@ import List from '../List/List.js';
 import Input from '../Input/Input.js';
 
 function App() {
+	const [todos, setTodos] = useState([]); 
+	const [entry, setEntry] = useState("");
+
+	function handleEntryChange(event) {
+			setEntry(event.target.value);
+	}
+// 	function handleFormSubmit(event) {
+// 		;
+// }
+// onFormSubmit = {handleFormSubmit}
 	return (
 		<main>
-			<h1>To do list app</h1>
-			<p>Enter your todos below:</p>
+			<Input entry = {entry} onEntryChange = {handleEntryChange} /> 
 		</main>
 	);
 }
