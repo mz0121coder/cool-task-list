@@ -29,17 +29,31 @@ function App() {
 		setTodos(newItems);          // update the state with the new array
 	  }
 
+	function increasePriority(index) { //NEW
+		let newItems = [...todos]; // create a copy of the items array
+		newItems = index <= 0 ? newItems : [...newItems.slice(0, index-1),newItems[index],newItems[index-1],...newItems.slice(index+1)]
+		setTodos(newItems);          // update the state with the new array
+	  }
+
+	function decreasePriority(index) { //NEW
+		let newItems = [...todos]; // create a copy of the items array
+		newItems = index >= newItems.length-1 ? newItems : [...newItems.slice(0, index),newItems[index+1],newItems[index],...newItems.slice(index+2)]
+		setTodos(newItems);          // update the state with the new array
+	  }
+
 	return (
 		<main>
 			<Input
 				entry={entry}
 				onEntryChange={handleEntryChange}
 				onTodoAdd={handleTodoAdd}
-				onClickClear = {clearTodos}
+				onClickClear = {clearTodos}				
 			/>
 			<List 
 				todos={todos} 
 				toRemoveItem = {handleRemoveItem} //NEW
+				toIncreasePriority = {increasePriority}
+				toDecreasePriority = {decreasePriority}
 			/>
 		</main>
 	);
