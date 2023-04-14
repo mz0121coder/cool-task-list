@@ -19,41 +19,63 @@ function App() {
 		setEntry('');
 	}
 
-	function clearTodos(){
+	function clearTodos() {
 		setTodos([]);
 	}
 
-	function handleRemoveItem(index) { //NEW
+	function handleRemoveItem(index) {
+		//NEW
 		const newItems = [...todos]; // create a copy of the items array
-		newItems.splice(index, 1);   // remove the item at the specified index
-		setTodos(newItems);          // update the state with the new array
-	  }
+		newItems.splice(index, 1); // remove the item at the specified index
+		setTodos(newItems); // update the state with the new array
+	}
 
-	function increasePriority(index) { //NEW
+	function increasePriority(index) {
+		//NEW
 		let newItems = [...todos]; // create a copy of the items array
-		newItems = index <= 0 ? newItems : [...newItems.slice(0, index-1),newItems[index],newItems[index-1],...newItems.slice(index+1)]
-		setTodos(newItems);          // update the state with the new array
-	  }
+		newItems =
+			index <= 0
+				? newItems
+				: [
+						...newItems.slice(0, index - 1),
+						newItems[index],
+						newItems[index - 1],
+						...newItems.slice(index + 1),
+				  ];
+		setTodos(newItems); // update the state with the new array
+	}
 
-	function decreasePriority(index) { //NEW
+	function decreasePriority(index) {
+		//NEW
 		let newItems = [...todos]; // create a copy of the items array
-		newItems = index >= newItems.length-1 ? newItems : [...newItems.slice(0, index),newItems[index+1],newItems[index],...newItems.slice(index+2)]
-		setTodos(newItems);          // update the state with the new array
-	  }
+		newItems =
+			index >= newItems.length - 1
+				? newItems
+				: [
+						...newItems.slice(0, index),
+						newItems[index + 1],
+						newItems[index],
+						...newItems.slice(index + 2),
+				  ];
+		setTodos(newItems); // update the state with the new array
+	}
 
 	return (
 		<main>
+			<div className='text-container'>
+				<h1>TO DO LIST APP</h1>
+			</div>
 			<Input
 				entry={entry}
 				onEntryChange={handleEntryChange}
 				onTodoAdd={handleTodoAdd}
-				onClickClear = {clearTodos}				
+				onClickClear={clearTodos}
 			/>
-			<List 
-				todos={todos} 
-				toRemoveItem = {handleRemoveItem} //NEW
-				toIncreasePriority = {increasePriority}
-				toDecreasePriority = {decreasePriority}
+			<List
+				todos={todos}
+				toRemoveItem={handleRemoveItem} //NEW
+				toIncreasePriority={increasePriority}
+				toDecreasePriority={decreasePriority}
 			/>
 		</main>
 	);

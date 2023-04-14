@@ -1,25 +1,17 @@
 import React from 'react';
 import './Input.css';
 
-export default function Input( props ) {
-
-    // return(
-    //     <form onSubmit = {props.onFormSubmit}>
-    //         <label htmlFor = "todo">Enter to-do:</label>
-    //         <input type = "text" id = "todo" value = {props.entry} onChange = {props.onEntryChange}></input>
-    //         <input type = "submit" value = "Add Todo"></input>
-    //         <button onClick = {() => console.log("Clicking")}>placeholder text</button> 
-    //     </form>
-    //)
-    return(
-        <div>
-            <label htmlFor = "todo">Enter to-do:</label>
-            <input type = "text" id = "todo" value = {props.entry} onChange = {props.onEntryChange}></input>
-            <button onClick = {props.onTodoAdd}> Add Todo</button>
-            <button onClick = {props.onClickClear}>Clear List</button> 
-        </div>
-    ) 
+export default function Input(props) {
+	return (
+		<div>
+			<label htmlFor='todo'>Enter to-do: </label>
+			<input
+				type='text'
+				id='todo'
+				value={props.entry}
+				onChange={props.onEntryChange}></input>
+			<button onClick={props.onTodoAdd}> Add Todo</button>
+			<button onClick={props.onClickClear}>Clear List</button>
+		</div>
+	);
 }
-
-
-// add a button that clears the todo list
