@@ -1,0 +1,57 @@
+/* List.css */
+.list-container {
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+  font-size: 24px;
+  color: #ffff00;
+  /* neon yellow */
+  text-align: center;
+  position: relative;
+  margin: 20px 0;
+}
+
+li:before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+button {
+  background: #ffff00;
+  /* neon yellow */
+  color: #000000;
+  /* black */
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  margin-left: 10px;
+  outline: none;
+}
+
+button:hover {
+  background: #000000;
+  /* black */
+  color: #ffff00;
+  /* neon yellow */
+}
+
+button:focus {
+  box-shadow: 0 0 0 2px #ffff00;
+  /* neon yellow */
+}
