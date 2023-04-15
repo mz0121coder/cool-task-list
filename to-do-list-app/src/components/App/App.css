@@ -19,7 +19,6 @@ body {
   animation: move-it 2s linear infinite;
 }
 
-
 main {
   display: flex;
   flex-direction: column;
@@ -62,5 +61,37 @@ main {
 
   75% {
     background-position: right top;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  /* adjust h1 font size for smaller screens */
+  .text-container h1 {
+    font-size: 100px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  /* adjust h1 font size for even smaller screens */
+  .text-container h1 {
+    font-size: 60px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  /* adjust background-size for smaller screens */
+  body {
+    background-size: 50px 50px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  /* adjust background-size for even smaller screens */
+  body {
+    background-size: 30px 30px;
   }
 }
