@@ -5,7 +5,7 @@ This is not your typical React todo list. Try it and see for yourself...
 
 ## How to Use
 
-[Deployed URL](https://mz0121coder.github.io/cool-task-list/)
+Use the app on the [deployed URL](https://mz0121coder.github.io/cool-task-list/)
 
 ## Demo
 
